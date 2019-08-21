@@ -1,0 +1,33 @@
+.container {
+	display: block;
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+#logo {
+	float: left;
+}
+
+#nav {
+	float: right;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+#nav li {
+	float: left;
+	list-style-type: none;
+	padding: 0 12px;
+}
+
+#nav a {
+	text-decoration: none;
+}
+
+.active {
+	color: #d6b161;
+}
