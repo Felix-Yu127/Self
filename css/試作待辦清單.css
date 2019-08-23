@@ -1,0 +1,40 @@
+body {
+	padding: 30px;
+}
+
+ul {
+	list-style-type: none;
+	/* 把li前面的點隱藏起來 */
+	padding-left: 0;
+}
+
+#todo-list li {
+	line-height: 3;
+	border-bottom: 1px solid #ccc;
+	/* 文字框底線顯示實線 */
+}
+
+#todo-list [type="text"] {
+	display: none;
+	/* 將input的編輯框隱藏起來 */
+}
+
+#todo-list .editing .content {
+	display: none;
+	/* 隱藏編輯模式及內容 */
+}
+
+#todo-list .editing [type="text"] {
+	display: inline;
+	/* 將編輯模式顯示出來 */
+}
+
+#todo-list [data-action="delete"] {
+	display: none;
+	/* 將刪除按鈕隱藏起來 */
+}
+
+#todo-list li:hover [data-action="delete"] {
+	display: inline;
+	/* 滑鼠移過去時將刪除按鈕顯示出來 */
+}

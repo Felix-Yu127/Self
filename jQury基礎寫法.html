@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css\jQuery基礎寫法.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".go-top").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+
+      $(".go-css").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+
+      $(".go-events").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+
+      $(".go-traversing").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+    });
+  </script>
+
+  <title>jQuery基礎寫法說明表</title>
+</head>
+
+<body>
+  <div id="container">
+    <h1>jQuery的使用</h1>
+    <ul class="title">
+      <li>jQuery有點像物件導向的概念</li>
+      <li>代表意思</li>
+      <ul class="subtitle">
+        <li>範例：$("ul li").fadeIn();</li>
+        <ul>$：代表使用jQuery的語法</ul>
+        <ul>("ul li")：代表選擇器(跟css的選擇器一樣)</ul>
+        <ul>.fadeIn()：代表動作</ul>
+        <li>例如：</li>
+        <ul>$("#id");</ul>
+        <ul>$(".container ul li > div");</ul>
+        <ul>$("input[type="text"]");</ul>
+        <ul>$("#target").css("background", "yellow");</ul>
+      </ul>
+      <br>
+      <ul class="l2 subtitle document">
+        <li>document：文件</li>
+        <li>$(document).scrollTop()：得到文件滾動的數值，滾動了多少</li>
+        <li>confirm：確認，跳出視窗確認是否執行</li>
+        <li>data-action：數據動作</li>
+        <li>todo item：待辦事項</li>
+        <li>prev()：上一頁</li>
+        <li>chaining：鏈接</li>
+        <li>result：結果</li>
+        <li>remove：去除、刪除</li>
+        <li>current：當前、現在、目前</li>
+        <li>active：活性、活躍、現行</li>
+        <li>currentActive()：當前活躍</li>
+        <li>Target：目標</li>
+        <li>currentTarget()：目前的目標，或用this也可以</li>
+        <li>e.stopPropagation()：停止傳播，只有指定的目標會啟動，不要向上層關係去告知</li>
+      </ul>
+      <li id="css">css / animate：應用在css中，活躍、觸發、執行，<u>加上動畫的效果</u>
+      </li>
+      <ul class="subtitle">
+        <li>css的單屬性改變</li>
+        <ul>$("#target").css("width", "20PX");</ul>
+        <li>css的多屬性改變，注意 { } 的使用位置, 一包的概念</li>
+        <ul>$("#target").css({"wigth": "20px", "height": "200px"});</ul>
+      </ul>
+      <ul class="subtitle">
+        <li>animate：漸變的效果</li>
+        <ul>$("#animate").animate({width: "400PX"});&emsp; ，寬度會漸變成400px，有動畫的效果</ul>
+        <li>stop：暫停，在這使用上是指停止之前(正在執行)的所有動畫效果
+          <ul class="l2"> $("#animate-with-stop").stop().animate({width: "400px"}); </ul>
+        </li>
+        <li>delay延遲，毫秒，1000毫秒等於1秒，讓指令延遲指定的秒數再做後續的動畫效果</li>
+        <ul class="l2"> $("#animate-with-delay").stop().delay(1000).animate({width: "400px"}); </ul>
+        <li>callback：回調，這指的是做完第一件事的動作，再接著做第二件事的動作function(e)不用給名字，這稱為匿名的function，直接寫function再寫要做什麼就好</li>
+        <ul class="l2 Description"> $(this).stop().animate({width: "190px"}, function(e) {<br>
+          &emsp;$("#animate-with-callback").animate({"font-size": "2em"});<br>
+          });
+        </ul>
+        <li>hide：隱藏，$("#target").hide();</li>
+        <li>show：顯示，$("#target").show();</li>
+        <li>fadeIn：淡入，$("#target").fadeIn();</li>
+        <li>fadeOut：淡出，$("#target").fadeOut();</li>
+        <li>slideUp：向上滑動，$("#target").slideUp();</li>
+        <li>slideDown：向下滑動，$("#target").slideDown();</li>
+      </ul>
+      <li class="events">events：事件，(e)，如滑鼠按一下、鍵盤按一下、畫面向下滾...</li>
+      <ul>
+        <li>mouse：滑鼠</li>
+        <ul class="subtitle Description l2">
+          <li>.click()：點擊，如點擊圖片後，跳出圖片放大，點擊關閉後，跳出圖片關閉</li>
+          <ul class="inline">$("#click").click(function(e) {<br>
+            &ensp;alert("click");<br>});</ul>
+          <li>.hover()：滑鼠移進去或移出來後觸發，可以用來+/- class</li>
+          <ul class="inline clearfix">$(".hover").hover(function(e) {<br>
+            &ensp;console.log("mouse in");<br>
+            }, function(e) {<br>
+            &ensp;console.log("mouse out");<br>
+            });</ul>
+          <div>或</div>
+          <ul class="inline">$(".mouseenter").mouseenter(function(e) {<br>&ensp;console.log("mouse
+            enter");<br>});
+          </ul>
+          <li>.scroll()：滑鼠滾動</li>
+          <ul class="inline">$(document).scroll(function(e) {<br>
+            &ensp;var scrollTop = $(document).scrollTop();<br>
+            &ensp;console.log(scrollTop);<br>
+            });</ul>
+        </ul>
+        <li>keyboard：鍵盤</li>
+        <ul class=" subtitle Description l2">
+          <li>keydown：鍵盤按下</li>
+          <ul>$("#keydown").keydown(function(e) {<br>console.log("keydown")<br>
+            }); </ul>
+          <li>keyup：鍵盤彈起</li>
+          <ul>$("#keyup").keyup(function(e) {<br>console.log("keyup")<br>
+            }); </ul>
+          <li>keypress：鍵盤按下並彈起 </li>
+          <ul>$("#keypress").keypress(function(e) {<br>console.log("keypress")<br>
+            });</ul>
+          <ul>e.keyCode：使用按鍵的數據，數據不會跟輸入內容一樣，比如鍵盤按a，得到數據是65</ul>
+        </ul>
+        <li>form：表格</li>
+        <ul class="Description subtitle l2">
+          <li>blur：模糊(失去焦點)，原本是focus的狀態，然後失去focus後就會觸發blur</li>
+          <ul>$("#target").blur(function(e) {<br>
+            &ensp;console.log("blur");<br>
+            }); </ul>
+          <li>focus：焦點</li>
+          <ul>$("#target").focus(function(e) {<br>
+            &ensp;console.log("focus");<br>
+            }); </ul>
+          <li>change：變化，原內容有改變時觸發</li>
+          <ul>$("#target").change(function(e) {<br>
+            &ensp;console.log("change");<br>
+            }); </ul>
+          <li>select：選擇，當選取內容文字的時候會觸發</li>
+          <ul>$("#target").select(function(e) {<br>
+            &ensp;console.log("words selected");<br>
+            }); </ul>
+          <li>submit：送出，通常針對表單做監聽，在送出前先檢查資料，是不是有資料沒寫到，按下submit後整個表單資料送出，而不是單一個input內容送出</li>
+          <li>e.preventDefault()：防止默認，攔截資料</li>
+          <ul>$("form").submit(function(e) {<br>
+            &ensp;e.preventDefault();<br>
+            &ensp;console.log("form verification.");<br>
+            }); </ul>
+        </ul>
+      </ul>
+      <li>document.ready / on / off</li>
+      <ul class="Description subtitle l2">
+        <li> document.ready：文件準備完成，幾乎都會寫，通常在最外圍都會包document.ready</li>
+        <ul>$(document).ready(function(e) {<br>
+          &ensp;console.log("ready");<br>
+          }); </ul>
+        <li>on：隨時監控，有任何事件觸發的時候，就會去處理，但需指定一個開始就存在的對象，去執行設定的程序</li>
+        <ul>$("body").on("mouseenter",".hover-area", function(e)
+          {<br>&ensp;console.log("hover binding with on");<br>
+          }); </ul>
+        <li>off：當某些(指定)狀況發生觸發時，不執行設定的程序</li>
+        <ul>$("#off").click(function(e) {<br>
+          &ensp;$("body").off("mouseenter", ".hover-area");<br>
+          });
+        </ul>
+      </ul>
+      <li>fire：觸發</li>
+      <ul class="Description subtitle l2">
+        <li>focus：焦點</li>
+        <ul>$("#target").focus();</ul>
+        <li>blur：模糊(失去焦點)</li>
+        <ul>$("#target").blur();</ul>
+      </ul>
+      <li class="traversing">traversing / 樹狀結構 / 尋找節點 / 爬樹
+        <ul class="Description subtitle l2">
+          <li>find：找、搜尋，找所有的孫子(下層所有的)，也可以指定符合條件的</li>
+          <li>children：孩子，只找下一層符合條件的孩子</li>
+          <li>parent：父親，只找上一層符合條件的</li>
+          <li>closest：最近的上一層，需要指定要找誰，找最近最接近的符合條件的祖先或父親</li>
+          <li>siblings：兄弟姐妹，找同一層關係的，但不包含本身，也可以指定符合條件的</li>
+          <li>first：第一個</li>
+          <ul>$("#posts").children().first().css("background", "yellow");</ul>
+          <li>last：最後一個</li>
+          <ul>$("#posts").children().last().css("background", "green");</ul>
+          <li>eq：指定第幾個，程式的順序是從0開始</li>
+          <ul>$("#posts").children().eq(1).css("background", "orange");</ul>
+          <li>remix：混音(爬樹)、混合所有指令，從所有去找</li>
+        </ul>
+      </li>
+      <li>jQuery DOM manipulate：jQuery的文件物件模型(樹狀結構)的操縱，<b class="big"><u>事件→找目標→處理</u></b></li>
+      <ul class="Description subtitle l2 clearfix">
+        <li>.append()：附加，把東西加入到指定的標籤、內容、表格的「裡面的最後面」</li>
+        <li>.prepend()：前置，把東西加入到指定的標籤、內容、表格的「裡面的前面」</li>
+        <li>.before()：前面，把東西加入到指定的標籤、內容、表格的「前面」</li>
+        <li>.after()：後面，把東西加入到指定的標籤、內容、表格的「後面」</li>
+        <li>.html()：清空再加入，把目標內的內容都清空再把東西加入</li>
+        <li>.remove：去掉(消除)，連資料及架構都從html的樹狀圖裡面清掉</li>
+        <li>empty：清空(把裡面的東西清空)，架構不變，只有內容清空</li>
+        <li>clone：克隆(複製)</li>
+        <ul class="inline">
+          <li>empty及clone的綜合運用：</li>$("#new-item").click(function(e){<br>
+          &ensp;var list = $(".reminder li").first().clone().empty();<br>$(this).before(list);<br>
+          });
+        </ul>
+        <ul class="inline">
+          jQury語法當(目標).點擊(函式(事件){<br>&ensp;宣告 list 是 jQury語法(".提醒
+          一行").第一個().複製().清空();<br>&ensp;jQury語法(這個).前面放入(list);<br>});
+        </ul>
+        <li>.addClass()：添加種類</li>
+        <ul>$("#targer").addClass("selected");&emsp;&emsp;&emsp;←---注意後面的()內己經是class，所以不要再打「.」，會錯誤</ul>
+        <li>.removeClass()：刪除種類</li>
+        <ul>$("#targer").removeClass("selected");&emsp;&emsp;&emsp;←---注意後面的()內己經是class，所以不要再打「.」，會錯誤</ul>
+        <li>.toggleClass()：切換種類，原先有執行了，就取消，原先沒執行，就幫你執行。原本有就拿掉，沒有就加上去的意思</li>
+        <ul>$("#targer").toggleClass("selected");&emsp;&emsp;&emsp;←---注意後面的()內己經是class，所以不要再打「.」，會錯誤</ul>
+        <li>css：可讀出css的值並重新賦與及修改</li>
+        <ul>$("#nav li").mouseenter(function(e){<br>
+          &emsp;var width = $(this).css("width");
+          &emsp;var lift = $(this).css("left");<br>
+          <br>
+          &emsp;$("activer-bar").css({
+          &emsp;&emsp;"width": width+"px",<br>
+          &emsp;&emsp;"left": left+"px"<br>
+          &emsp;});
+          }); </ul>
+        <li>
+          .prop()：屬性，(property的縮寫)，像是class、type、value、checkbox、input等等，可以讀取屬性內的值，也可以寫入(更改)屬性，比較聰明會讀取內容的最後結果，但有時反而不需要這麼詳細的內容時，就可以用attr。
+        </li>
+        <li>.attr()：屬性，(attribute的縮寫)，也是讀取屬性內的值，但比較單純，只會讀取看到的東西，不會去演算或判斷。</li>
+        <ul>
+          <li>寫入(更改)的部份</li>
+          $("#target").prop("type", "checkbox");&emsp;&emsp;&emsp;←---這就是針對的type屬性調整成checkbox。原本可能是text。<br>
+          $("#target").prop("value", 99);&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;←---這是把value的值改成99。<br>
+          $("#target").val(120);&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;←---也可以這樣簡寫更改value的值，改成120。
+        </ul>
+        <ul>
+          <li>讀取的部份</li>
+          var result = $("#target").prop("value");&emsp;&emsp;&emsp;←---這是把value的值讀出來並宣告在result身上。
+          <br>
+          result = $("target").porp("type");&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;←---而這是把type的屬性讀出來放在reuslt身上。
+          <br>
+          var reuslt =
+          $("target").val();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;←---也可以這樣簡寫把val值讀出來並宣告在result身上。
+        </ul>
+        <li>.val()：值，(value的縮寫)</li>
+        <li>.data()：數據、資料(是一個html的屬性)，可以塞在HTML之中(由html5去規範)，可以偷偷塞資料在html裡，但不會顯示在網頁上，使用者看不到，等要用的時候再拿來使用</li>
+        <pre class="inline float">
+           &lt;ul>
+            &lt;li data-id="001">Lorem ipsum dolor sit amet.&lt;/li>
+            &lt;li data-id="002">Lorem ipsum dolor sit amet.&lt;/li>
+            &lt;li data-id="003">Lorem ipsum dolor sit amet.&lt;/li>
+            &lt;li data-id="004">Lorem ipsum dolor sit amet.&lt;/li>
+            &lt;li data-id="005">Lorem ipsum dolor sit amet.&lt;/li>
+          &lt;/ul>
+        </pre>
+        <br>
+        <ul class="inline clearfix">var result = $("ul li").eq(2).data("id");&emsp;&emsp;&emsp;←---這是讀取，result = 003<br>
+          $("ul li").eq(2).data("id", "25");&emsp;&emsp;&emsp;←---這是寫入(更改)把003 改成 25 。 </ul>
+      </ul>
+      <ul class="subtitle l2 Description">
+        <li>.position()：針對父親(上一層關係)或容器去取得相對位置</li>
+        <li>.offset()：針對整個網頁去取得相對位置</li>
+      </ul>
+
+
+    </ul>
+
+
+    <a href="#container" class="go-top">TOP</a>
+    <a href="#css" class="go-css">CSS</a>
+    <a href=".events" class="go-events">事件</a>
+    <a href=".traversing" class="go-traversing">樹狀</a>
+
+
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>

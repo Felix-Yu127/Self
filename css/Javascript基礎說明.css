@@ -1,0 +1,39 @@
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#container {
+	line-height: 2.5;
+	background-color: gainsboro;
+}
+
+.title {
+	font-size: 22px;
+}
+
+.subtitle {
+	font-size: 16px;
+}
+
+.Description {
+	line-height: 1.5;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.letter {
+	letter-spacing: 1px;
+}
+
+b {
+	font-size: 20px;
+}
+
+u {
+	font-size: 35px;
+	letter-spacing: 2px;
+}

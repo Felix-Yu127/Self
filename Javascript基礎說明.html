@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css\Javascript基礎說明.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <title>Javascript基礎說明表</title>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Javascriptk基礎說明表</h1>
+    <ul class="title">
+      <li>Statements：聲明，跟電腦說我要做這件事情，由很多Expressions組成</li>
+      <ul class="subtitle">
+        <li>Expressions：表達式，y * 2; 或 x + 8; 或 z -5;</li>
+        <li>call expression：</li>
+        <li>function：</li>
+      </ul>
+      <li>output：產出</li>
+      <ul class="subtitle">
+        <li>console.log：查看變數的值現在是多少的指令，像是python的print，如console.log(y);console.log(x)-直接顯示在操作畫面上(主要使用);</li>
+        <li>alert：警報、警訊，瀏覽器跳出小視窗(警示視窗)，並顯示警示內容，如alert("這不是肯得基");alert(x)-顯示在警示視窗;</li>
+      </ul>
+      <li>input：輸入</li>
+      <ul class="subtitle">
+        <li>prompt：提示，彈出一個視窗讓使用者輸入資料，例如name = prompt("what's your name?");console.log(name); 使用者輸入後會得到值</li>
+      </ul>
+      <li>operators：運行商</li>
+      <ul class="subtitle">
+        <li>Assignment：分配，類似賦予、指定的意思，如x = 3;</li>
+        <li>Math：數學，運算公式+ - * / ，如x = x * 6;等於x = 3 * 6，x = 18;</li>
+        <li>Compound assignment：複合賦值，將數值再做運算並定義新數值，如：x += 20; 等於18+20再存回本身，x新值為38;</li>
+        <li>Increment/descrement：遞增/遞減，如x++;就是x+1的意思，x--;就是x-1的意思</li>
+        <li>object property access：對象屬性訪問，物件的存取console(目標物件).log(存取)</li>
+        <li>Equality：相等(等於「==」或不等於「!=」)，相同會回傳TRUE，不相同會回傳FALSE</li>
+        <li>Comparison：對照，小於「<」、大於「>」、小於等於「<=」、大於等於「>=」</li>
+        <li>Logical：合乎邏輯，或「||」、且「&&」的意思</li>
+      </ul>
+      <li>value：值</li>
+      <ul class="subtitle">
+        <li>math：數學</li>
+        <ul>
+          <li>number(1,2,3,4)</li>
+        </ul>
+        <li>context：上下文</li>
+        <ul>
+          <li>string：字串</li>
+        </ul>
+        <li>decision：決定</li>
+        <ul>
+          <li>boolean：布林值(true、false)</li>
+        </ul>
+        <li>comments：註解</li>
+        <ul>
+          <li>「//」：單行註解</li>
+          <li>「/* */」：多行註解</li>
+        </ul>
+        <li>variables：變數</li>
+        <ul>
+          <li>var：宣告，如 var age = 32 ; 就是告訴系統 age(變數) 是 32</li>
+          <li>weak typing或dynamic typing：弱型別(javascript的特色)，如 var age = 32 ; 就是告訴系統 age 是 32，但沒有特別標註 32
+            是數字還是字串，系統會自動判斷</br>當數字跟字串同時宣告在同一個目標內，系統會將全部認為是字串，如</li>
+          <ul class="Description letter">var age = 32;</br>
+            age = "He is" + age + "years old.";</br>
+            console.log(age;)</br>
+            得到"He is 32 years old."
+          </ul>
+        </ul>
+      </ul>
+      <li>Type：類型</li>
+      <ul class="subtitle">
+        <li>block：塊「{ }」，如果直接用 { } 包起來就會直接執行，但如果是配合 if 使用就會變成不成立前述條件才會執行 { } 內的內容</li>
+        <ul class="Description clearfix inline letter">
+          var iq = 87;</br>{</br>&emsp; iq = iq * 2 ;</br>&emsp; console.log(iq) ;</br>}
+        </ul>
+        <ul class="Description inline letter">
+          var iq = 180 ;</br> if ( iq > 87 ) {</br>&emsp;&ensp;iq = iq / 2 ;</br>&emsp;&ensp;console.log(iq) ;</br>}
+        </ul>
+        <li>conditionals：判斷式，if (如果)、 else (否則) </li>
+        <li>loops：迴圈。(要小心無窮迴圈)</li>
+        <ul>
+          <li>while：當</li>
+          <ul class="Description inline letter">
+            var amountOfFood = 200 ;</br> while ( amountOfFood > 0 ) {</br>&emsp; amountOfFood-- ; </br>}
+          </ul>
+          <li>for：對於，有一個起始點 ( i = 0 )和一個終點 ( i &#60; 9 )，和一個使之到終點的方式 ( i++ ) </li>
+          <ul class="Description inline">
+            for (var i = 0 ; i &#60; 9 ; i++ ) { <br> &emsp;&ensp; console.log( i ) ; </br> }
+          </ul>
+        </ul>
+      </ul>
+      <li>Function：函數(函式)，像是python的函式定義及使用函式定義，<b><u>function(參數){要做的事}</u></b>
+      </li>
+      <ul class="subtitle Description clearfix inline letter">
+        function 定義名稱(參數名稱) {</br> &emsp;var price = 參數資料 + ".20" ; </br>&emsp;return price ;</br>} </br>var
+        自己取名字 定義名稱( 參數資料 ) ;<br>console.log( 自己取名字 ) ;
+      </ul>
+      <ul class="subtitle Description inline letter">
+        function say(msg) {</br> &emsp;var price = "Hello" + "hi" ; </br>&emsp;return price ;</br>} </br>var
+        abcd say( "hello" ) ;<br>console.log( abcd ) ;
+      </ul>
+      <li>
+        scope：範圍，在這指的是變數的意思，在不同的範圍(空間、位置)會有不同的值<br>
+        <b>在function外的.log不會進到function找資料，但是function裡面的.log如果找不到定義值，會跑出去function外，向上找最近的定義值。</b>
+      </li>
+      <ul class="subtitle Description clearfix inline letter">
+        var a = 1 ;</br>function abc( ) {</br> &emsp;var a = 5 ; </br>&emsp;console.log( a ) ;</br>} </br></br>abc( )
+        ;<br>console.log( a ) ;
+        </br>答案：第一個.log(a) = 5，第二個.log(a) = 1
+      </ul>
+      <ul class="subtitle Description inline letter">
+        var a = 1 ;</br>function abc( ) {</br> &emsp;console.log( a ) ;</br>} </br></br>abc( )
+        ;<br>console.log( a ) ;
+        </br>答案：第一個.log(a) = 1，第二個.log(a) = 1
+      </ul>
+      <ul class="subtitle Description clearfix inline letter">
+        function abc( ) {</br> &emsp;var a = 5 ; </br>&emsp;console.log( a ) ;</br>} </br></br>abc( )
+        ;<br>console.log( a ) ;
+        </br>答案：第一個.log(a) = 5，第二個.log(a) = undefined
+      </ul>
+      <p>undefined：未定義</p>
+      <li>Object：物體，像一個大箱子，裡面可以放很多任何型態，字串、數字、真假值、函數、object物體，裡面的東西又稱為屬性(property)</li>
+      <ul class="subtitle h4">
+        <li>property：屬性，像python的字典，鍵值對(Key-Value Pair)</li>
+      </ul>
+      <div class="Description inline letter ">先賦予obj裡面的東西</div>
+      <ul class="subtitle Description clearfix inline letter">
+        var obj = {<br>
+        &emsp;hi: "hello world!" ,<br>
+        &emsp;price: 25 ,<br>
+        &emsp;isItGood: true ,<br>
+        &emsp;cleanYourHouse: function( ) {<br>
+        &emsp; &emsp;console.log("clean the house");<br>
+        &emsp;} ,<br>
+        &emsp;otherObj: {<br>
+        &emsp;&emsp;foo: "string a" ,<br>
+        &emsp;&emsp;bar: "string b" ,<br>
+        &emsp;},<br>
+        };
+      </ul>
+      <div class="Description inline letter">再取出使用</div>
+      <ul class="subtitle Description inline letter">
+        console.log(obj.hi);<br> console.log(obj.price);<br>
+        console.log(obj.isItGood);<br>
+        console.log(obj.cleanYourHouse);<br>
+        console.log(obj.otherObj.foo);<br>
+        console.log(obj.otherObj.bar);<br>
+      </ul>
+      <div class="Description inline letter">另一種寫法</div>
+      <ul class="subtitle Description inline letter">
+        console.log(obj["hi"]);<br> console.log(obj["price"]);<br>
+        console.log(obj["isItGood"]);<br>
+        console.log(obj["cleanYourHouse"]);<br>
+        console.log(obj["objotherObj"]["foo"]);<br>
+        console.log(obj["objotherObj"]["bar"]);<br>
+      </ul>
+      <li>Array(排列)：一種物件，特別的型式：像流水號數字的索引，不需要設定key(索引)，直接給值就好，系統會自動排列並按順序編號給索引</li>
+      <ul class="subtitle Description inline letter">
+        var arraySample = [<br>
+        &emsp;"hello world",<br>
+        &emsp;25,<br>
+        &emsp;true,<br>
+        ];<br>
+        <br>
+        console.log(arraySample[0]);<br>
+        console.log(arraySample[1]);<br>
+        console.log(arraySample[2]);
+      </ul>
+      <li>function as values：作為價值觀(函式就是值，不另外命名)</li>
+      <ul class="subtitle Description inline letter">
+        function foo( ){<br>
+        &emsp;console.log("foo");<br>
+        }<br>
+        <br>
+        foo();<br>
+        第一種方式寫法
+      </ul>
+      <ul class="subtitle Description inline letter">
+        var bar = function( ){<br>
+        &emsp;console.log("bar");<br>
+        }<br>
+        <br>
+        bar();<br>
+        第二種方式寫法
+      </ul>
+    </ul>
+  </div>
+</body>
+
+</html>
