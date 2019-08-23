@@ -63,20 +63,18 @@ body {
   -moz-font-smoothing:antialiased;
 }</pre>
     </div>
+    <p>@import：導入，利用@import "about.less";指令可以將"about.less"裡的檔案內容導入到另一個檔案裡面</p>
     <p>「*」：代表所有元素</p>
     <p>「>」：底下所有符合的class都做選擇</p>
     <p>「+」：</p>
-    <p>「&」：</p>
+    <p>「&」：在同一層關係</p>
     <p>「-」：</p>
     <p>「:first-child」：第一個孩子</p>
     <p>「:last-child」：最後一個孩子</p>
-    <p></p>
     <p>display:block - 區塊，元素會以區塊方式呈現，除非設定 position 或 float，block 的特性是可以設定高度（height）、寬度（width）、上方與下方距離，像是 div、p、ul、li 均屬
       block</p>
     <p>display:inline - 所有文字或圖片均不換行，也就是全部都會是同一行的意思，inline 高度與寬度都不能設定，文字或圖片所佔的寬度就是他的寬度，像是 span、a、input、img、em 均屬 inline
     </p>
-    <p></p>
-    <p></p>
     <p>margin
       collapsing：崩塌，兩個都是display:block的時候，margin之間都沒有任何障礙物，兩個margin就會重疊。<br>&emsp;(1)鄰近的兄弟姊妹之間 (2)當爸爸跟第一個孩子or最後一個孩子之間
       (3)空的block本身會崩塌
@@ -87,9 +85,13 @@ body {
     <p>Source Sans Pro：字體的一種</p>
     <p>sans-serif：無襯線字體(字體的一種)</p>
     <p>font-weight：字體重量(字體粗細)，100最細，900最粗，400為中等</p>
+    <p>margin：邊界，邊界有時候可以重複，是跟其他物體之間的距離，比較像是，書跟其他物品之間的距離像是跟隔壁的筆差了 20cm、跟杯子隔了 30cm</p>
+    <p>padding：留白，距離邊界有多遠，是對本身的留白, 有點像是書裡面的留白，文字跟書之間的距離</p>
     <p>slider：滑塊</p>
     <p>category：類別</p>
     <p>recent-product：近期產品</p>
+    <p>laptop：筆記本電腦</p>
+    <p>summary：摘要</p>
     <p>intro：介紹</p>
     <p>info：信息</p>
     <p>product：產品</p>
@@ -103,6 +105,7 @@ body {
     <p>thumbnail：縮略圖</p>
     <p>pixel：像素</p>
     <p>git</p>
+    <p>common-list：常見的列表</p>
     <p>event：事件</p>
     <p>submit：提交</p>
     <p>feature：特徵</p>
@@ -119,6 +122,7 @@ body {
     <p>text-align：文本對齊，文字對齊方式。是針對文章內的文字</p>
     <p>center：置中</p>
     <p>display：顯示</p>
+    <p>inline：直列，inline包不住block，就像紙包不住火一般。</p>
     <p>block：區塊</p>
     <p>容器置中的方式：將容器設定成區塊，設定寬度，設定margin上下0左右auto</p>
     <p>img在預設是display:inline，系統會在底下預留一點點空白(文字底線下的空間)，所以容器的高度會不一樣，設成block就可以解決</p>
