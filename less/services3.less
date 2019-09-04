@@ -1,0 +1,94 @@
+@import "basic.less";
+
+.service {
+	#header {
+		position: absolute;
+		width: 100%;
+	}
+
+	#content {
+		.header {
+			background-image: url(https://dummyimage.com/1920x1080/eee/ddd);
+			&.black {
+				.title,
+				#breadcrumbs li {
+					color: black;
+				}
+			}
+		}
+		.special-services {
+			.title {
+				letter-spacing: 1px;
+				font-size: 16px;
+				color: @branding-color;
+				line-height: 1.5;
+			}
+			.subtitle {
+				margin: 0;
+				letter-spacing: 1px;
+				font-size: 18px;
+				line-height: 1.5;
+				text-transform: uppercase;
+				font-weight: normal;
+			}
+			p {
+				margin-bottom: 30px;
+			}
+		}
+		.special-offer {
+			padding: 60px 0;
+			letter-spacing: 1px;
+			line-height: 1.5;
+			em {
+				font-style: normal;
+				color: @branding-color;
+			}
+			.promo-info {
+				float: left;
+				.title {
+					margin-bottom: 10px;
+				}
+				p {
+					line-height: 22px;
+				}
+			}
+			.promo-button {
+				margin: 0;
+				float: right;
+			}
+		}
+	}
+	.services {
+		padding: 100px 0;
+		.row {
+			> div {
+				padding: 50px;
+				&:hover {
+					transition: 0.3s linear all;
+					background: #222;
+					color: white;
+					i {
+						color: @branding-color;
+					}
+					p {
+						color: #737373;
+					}
+				}
+			}
+		}
+	}
+	.big-dot {
+		li {
+			float: left;
+			width: 50%;
+			margin-bottom: 10px;
+			line-height: 1.5;
+			&::before {
+				font-family: "fontello"; /*要顯示的字型*/
+				content: '\f10c'; /*在fontello.css中icon的名稱*/
+				color: #757575;
+				padding-right: 10px;
+			}
+		}
+	}
+}
