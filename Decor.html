@@ -1,185 +1,303 @@
 <!DOCTYPE html>
-<html lang="zn">
+<html lang="zh-tw">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/w.ico/favicon-16x16.png">
+  <link rel="stylesheet" href="css/fontello.css">
   <link rel="stylesheet" href="css\normalize.css">
-  <link rel="stylesheet" href="css\Decor.css">
+  <link rel="stylesheet" href="css\main.css">
   <title>Decor</title>
 </head>
 
-<body>
-
+<body class="decor">
   <div id="header">
-    <div id="container">
-      <div id="logo"><img src="https://dummyimage.com/107x100/b3b3b3/fff" alt="massive"></div>
+    <div class="container clearfix">
 
+      <div id="logo">
+        <img src="http://lorempixel.com/112/100" alt="logo">
+      </div>
       <div id="nav">
-        <ul>
-          <li class="active">home</li>
-          <li><a href="#">pages</a></li>
-          <li><a href="#">features</a></li>
-          <li><a href="#">portfolio</a></li>
-          <li><a href="#">blog</a></li>
-          <li><a href="#">shortcodes</a></li>
-          <li class="border"><a href="#">shop</a></li>
-          <li><a href="#"><i>i</i>cart(2)</a></li>
-          <li><a href="#"><i>i</i>search</a></li>
+        <ul class="clearfix">
+          <li class="active"><a href="#">home<span class="symbol">+</span></a></li>
+          <li><a href="#">pages<span class="symbol">+</span></a></li>
+          <li><a href="#">features<span class="symbol">+</span></a></li>
+          <li><a href="#">portfolio<span class="symbol">+</span></a></li>
+          <li><a href="#">blog<span class="symbol">+</span></a></li>
+          <li><a href="#">shortcodes<span class="symbol">+</span></a></li>
+          <li class="boundary"><a href="#">shop<span class="symbol">+</span></a></li>
+          <li><a href="#"><i class="icon-basket"></i> cart(2)<span class="symbol">+</span></a></li>
+          <li><a href="#"><i class="icon-search"></i> search<span class="symbol">+</span></a></li>
         </ul>
       </div>
-      <div class="clearfix"></div>
     </div>
   </div>
 
   <div id="content">
 
-    <div class="container row">
-      <div class="shopping">
-        <div class="col-6">
-          <img src="https://dummyimage.com/560x258/b3b3b3/fff" alt="img">
-          <div class="info">outdoor lighting</div>
-        </div>
-        <div class="col-6">
-          <img src="https://dummyimage.com/560x258/b3b3b3/fff" alt="img">
-          <div class="info">wooden flooring</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/366x256/b3b3b3/fff" alt="img">
-          <div class="info">living area</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/366x256/b3b3b3/fff" alt="img">
-          <div class="info">bathroom fittings</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/366x256/b3b3b3/fff" alt="img">
-          <div class="info">tools &amp; equipment</div>
+    <div class="slider">
+      <img src="http://lorempixel.com/1920/1080" alt="slider">
+    </div>
+
+    <div class="categories">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-6 category"><a href="#">
+              <img src="http://lorempixel.com/575/265" alt="category" />
+              <span class="title dark">outdoor<br>lighting</span>
+            </a></div>
+          <div class="col-6 category"><a href="#">
+              <img src="http://lorempixel.com/575/265" alt="category" />
+              <span class="title light">wooden<br>flooring</span>
+            </a></div>
+          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+              <span class="title dark">living<br>area</span>
+            </a></div>
+          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+              <span class="title light">bathroom<br>fittings</span>
+            </a></div>
+          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+              <span class="title dark">tools&amp;<br>equipment</span>
+            </a></div>
         </div>
       </div>
+    </div>
 
-      <div class="subtitle">
-        <h4>recent product</h4>
-        <hr>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus consequuntur adipisci nostrum.</p>
+    <div class="recent-product">
+      <div class="container">
+        <div class="intro">
+          <h2 class="title">recent product</h2>
+          <hr />
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, magnam?</p>
+        </div>
+
+        <div class="products">
+          <ul class="clearfix row">
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+            <li class="col-4 product">
+              <div class="thumbnail">
+                <img src="http://lorempixel.com/370/277" alt="product">
+                <div class="cover">
+                  <a href="#"><i class="icon-search-1"></i></a>
+                </div>
+              </div>
+              <div class="info">
+                <h3 class="title">
+                  <a href="#">Lorem, ipsum dolor.</a>
+                </h3>
+                <div class="price">$39.99</div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
+    </div>
 
-      <div class="commodity row">
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
+    <div class="event">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12">
+
+            <h1 class="title">30% discount</h1>
+            <h3 class="subtitle">for this summer only</h3>
+            <a href="#" class="button white">shop now</a>
+
+          </div>
         </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
-        </div>
-        <div class="col-4">
-          <img src="https://dummyimage.com/370x277/b3b3b3/fff" alt="commodity">
-          <div><i>i</i></div>
-          <div class="intro">Lorem, ipsum dolor.</div>
-          <div class="price">$39.99</div>
+
+      </div>
+    </div>
+
+    <div class="featured">
+      <div class="container clearfix">
+
+        <div class="row">
+
+          <div class="col-6">
+            <img src="http://lorempixel.com/525/453" alt="product">
+          </div>
+          <div class="col-6 info">
+            <div class="title">featured item</div>
+            <h3 class="name">antic single sofa</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus inventore rem, quas dicta enim
+              voluptates?
+            </p>
+            <div class="price">$240</div>
+            <a href="#" class="button bordered dark">buy now</a>
+          </div>
+
         </div>
       </div>
+    </div>
 
-      <div class="slide">
-        <img src="" alt="">
-        <h1>30% discount</h1>
-        <h4>for this summer only</h4>
-        <button class="but-white">shop now</button>
+    <hr>
+
+    <div class="outlets">
+      <div class="container">
+
+        <div class="intro">
+          <h2 class="title">outlets</h2>
+          <hr>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero aperiam doloribus officiis.</p>
+        </div>
+
+        <div class="row clearfix">
+
+          <div class="col-4 outlet">
+            <h3>sydney</h3>
+            <div class="info">
+              <div class="address">Lorem ipsum dolor sit amet consectetur.</div>
+              <div class="phone">
+                <label>Phone:</label>
+                <a href="tel:+886-922-901-441">+886 922 901 441</a>
+              </div>
+              <div class="email"><label>Email:</label>
+                <a href="mailto:sakra914133@gmail.com">sakra914133@gmail.com</a>
+              </div>
+            </div>
+            <div class="map">
+              <a href="#" target="_bland"><i class="icon-location"></i>view map</a>
+            </div>
+          </div>
+
+          <div class="col-4 outlet">
+            <h3>sydney</h3>
+            <div class="info">
+              <div class="address">Lorem ipsum dolor sit amet consectetur.</div>
+              <div class="phone">
+                <label>Phone:</label>
+                <a href="tel:+886-922-901-441">+886 922 901 441</a>
+              </div>
+              <div class="email"><label>Email:</label>
+                <a href="mailto:sakra914133@gmail.com">sakra914133@gmail.com</a>
+              </div>
+            </div>
+            <div class="map">
+              <a href="#" target="_bland"><i class="icon-location"></i>view map</a>
+            </div>
+          </div>
+
+          <div class="col-4 outlet">
+            <h3>sydney</h3>
+            <div class="info">
+              <div class="address">Lorem ipsum dolor sit amet consectetur.</div>
+              <div class="phone">
+                <label>Phone:</label>
+                <a href="tel:+886-922-901-441">+886 922 901 441</a>
+              </div>
+              <div class="email"><label>Email:</label>
+                <a href="mailto:sakra914133@gmail.com">sakra914133@gmail.com</a>
+              </div>
+            </div>
+            <div class="map">
+              <a href="#" target="_bland"><i class="icon-location"></i>view map</a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-
-      <div class="featured row">
-        <div class="col-6">
-          <img src="https://dummyimage.com/525x453/b3b3b3/fff" alt="img">
-        </div>
-        <div class="col-6">
-          <div class="title">featured item</div>
-          <div class="subtitle">antic single sofa</div>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed quae odio veritatis quia est voluptatum
-            eaque!</p>
-          <div class="price">$240</div>
-          <button class="but-white">buy now</button>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="subtitle">
-        <h4>outlets</h4>
-        <hr>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus consequuntur adipisci nostrum.</p>
-      </div>
-
-      <div class="sydney row">
-        <div class="col-4">
-          <div class="title">sydney</div>
-          <li class="address">upper level,the rocks, sydney 2000</li>
-          <li class="phone">phone:+62 500 800 123</li>
-          <li class="mailto">email:sakura914133@gmail.com</li>
-          <li><i>i</i><a href="#" class="map">view map</a></li>
-        </div>
-        <div class="col-4">
-          <div class="title">canberra</div>
-          <li class="address">upper level,the rocks, sydney 2000</li>
-          <li class="phone">phone:+62 500 800 123</li>
-          <li class="mailto">email:sakura914133@gmail.com</li>
-          <li><i>i</i><a href="#" class="map">view map</a></li>
-        </div>
-        <div class="col-4">
-          <div class="title">darwin</div>
-          <li class="address">upper level,the rocks, sydney 2000</li>
-          <li class="phone">phone:+62 500 800 123</li>
-          <li class="mailto">email:sakura914133@gmail.com</li>
-          <li><i>i</i><a href="#" class="map">view map</a></li>
-        </div>
-      </div>
-
     </div>
 
   </div>
 
   <div id="footer">
-    <div id="logo"><img src="https://dummyimage.com/107x100/b3b3b3/fff" alt="massive"></div>
+    <div class="container clearfix">
+      <div class="logo">
+        <img src="http://lorempixel.com/57/52" alt="logo">
+      </div>
 
-    <div class="copyright">
-      <div class="company">&copy; massive 2014</div>
-      <div class="info">building your site with lots of fun</div>
-    </div>
-    <div class="Social-media">
-      <a href="#"><i>f</i></a>
-      <a href="#"><i>t</i></a>
-      <a href="#"><i>d</i></a>
-      <a href="#"><i>g</i></a>
-      <a href="#"><i>b</i></a>
-    </div>
+      <div class="copyright">
+        <div class="title">&copy; massive 2014.</div>
+        <div class="subtitle">building your site with lots of fun</div>
+      </div>
 
+      <div class="social-media">
+        <ul class="clearfix">
+          <li><a href="#"><i class="icon-facebook"></i></a></li>
+          <li><a href="#"><i class="icon-twitter"></i></a></li>
+          <li><a href="#"><i class="icon-dribbble"></i></a></li>
+          <li><a href="#"><i class="icon-gplus"></i></a></li>
+          <li><a href="#"><i class="icon-behance"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 
-  <a href="#" class="go-top">top</a>
-
+  <a href="#header" id="go-top"><i class="icon-angle-up"></i></a>
 
 </body>
 
