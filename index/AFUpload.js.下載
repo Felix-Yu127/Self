@@ -1,0 +1,263 @@
+/**
+ * 異步檔案上傳簡易版(單檔，無法跨網)
+ * @requirememt jQuery
+ * @author Jack.Zhu
+ */
+
+(function($){
+	$.fn.AFUpload = function(options) {  
+		var AFUpload_ERR_NONE = 0;
+		var AFUpload_ERR_INI_SIZE = 1;
+		var AFUpload_ERR_FORM_SIZE = 2;
+		var AFUpload_ERR_PARTIAL = 3;
+		var AFUpload_ERR_NO_FILE = 4;
+		var AFUpload_ERR_FILE_EMPTY = 5;
+		var AFUpload_ERR_NO_TMP_DIR = 6;
+		var AFUpload_ERR_CANT_WRITE = 7;
+		var AFUpload_ERR_EXTENSION = 8;	
+		var AFUpload_ERR_CALLBACK = 9;
+		var AFUpload_ERR_ACCEPT = 10;
+		var AFUpload_ERR_FILETYPE = 11;
+		var AFUpload_ERR_AFUPLOAD = 12;		
+		
+		var settings = $.extend( {
+			'url'            : window.location.href,
+			'onsuccess'      : function(data){},
+			'onerror'        : function(data){},
+			'onbegin'        : function(myform){return true;},
+			'uploadOnChange' : true,
+			'maxSize'        : 2097152,
+			'accept'         : "*/*", // image/png only support ff, chrome
+			'fileType'       : ""     // jpg|pgn|jpeg|gif (regexp)
+			
+		}, options);
+		
+		//permission denied, alert & redirect.  (my104ajax.js)
+		var noLoginStatus = function(data){
+			if(typeof data == 'object' 
+				&& typeof data['noLoging'] !== "undefined" && data['noLoging'] == 1
+					&& typeof data['redirect'] !== "undefined")
+			{	//redirect
+				$replaceUrl = data['redirect'];
+				if(typeof data['alert'] !== "undefined")
+				{
+					alert(data['alert']);
+				}
+				window.location.replace($replaceUrl);
+				return true;
+			}
+			return false;
+		};
+		
+
+		return this.each(function(cnt) {
+			var elm = this;	
+			if(!$(this).is('form'))
+				return;			
+			var myFile = $(this).find('input[type="file"]').first();
+			if(myFile.length > 0)
+			{
+				myFile = myFile[0];
+			}
+			else
+			{
+				$(elm).submit(function(){return false;});
+				return;
+			}			
+			var useXhr = true;
+
+			if( typeof(FormData) == 'undefined' || typeof(myFile.files) == 'undefined')
+				useXhr = false;
+
+			if(!useXhr){
+				//use iframe
+				$(elm).append(
+						$(
+								'<div id="AFUploadDiv'+cnt+'" style="display:none;width:0px;height:0px">'
+								+'<input type="hidden" id="AFUpload'+cnt+'" name="AFUpload" value="" />'
+								+'<input type="hidden" id="AFUploadName_'+cnt+'" name="AFUploadName" value="" />'
+								+'<input type="hidden" id="AFUploadNum_'+cnt+'" name="AFUploadNum" value="" />'
+								+'<input type="hidden" id="AFUploadMaxSize_'+cnt+'" name="AFUploadMaxSize" value="" />'
+								+'<iframe name="AFUploadIframe'+cnt+'" id="AFUploadIframe'+cnt+'" src="about:blank"></iframe>'
+								+'</div>'
+						)
+				);
+			}					
+
+			AFUploadOnProgress = false;
+			$(myFile).attr('accept', settings.accept);
+
+			(function(fn){
+				if(settings.uploadOnChange){
+					$(myFile).change(fn);
+					$(elm).submit(function(){return false;});
+				}else{
+					$(elm).submit(fn);
+				}
+			})(function (event){
+				if(AFUploadOnProgress)
+					return false;
+				
+				var fName = $(myFile).val();
+				if(fName.replace(/^\s+|\s+$/,"") == ""){
+					elm.reset();
+					return false;
+				}
+				if(!settings.onbegin(elm))
+					return false;
+				
+				if(!(new RegExp((settings.fileType == "" ? ".*":"\.("+settings.fileType+")$"),"i")).test(fName)){
+					settings.onerror({'status':AFUpload_ERR_FILETYPE,'message':"Error File Type",'targetObj':elm, 'data':null});
+					elm.reset();
+					return false;
+				}
+				
+				if(!useXhr){
+					//use iframe	
+					var iframe = $('#AFUploadIframe'+cnt); 
+					if(iframe.length < 1)
+						return false;
+					
+					$(elm).attr('method','post');
+					$(elm).attr('enctype','multipart/form-data');
+					$(elm).attr('target','AFUploadIframe'+cnt);
+					$(elm).attr('action',settings.url);					
+					$("#AFUpload"+cnt).val(1);
+					$("#AFUploadName_"+cnt).val($(myFile).attr('name'));
+					$("#AFUploadNum_"+cnt).val(cnt);
+					$("#AFUploadMaxSize_"+cnt).val(settings.maxSize);
+					var timeoutcnt = 0;
+					var iLoading = function(){
+						if(window['AFUploadIframe'+cnt].document.readyState == "complete")
+						{
+							AFUploadOnProgress = false;
+							elm.reset();
+							try{
+								
+								eval("var data="+$(window['AFUploadIframe'+cnt].document).text());
+							}
+							catch(e) 
+							{
+								settings.onerror({'status':AFUpload_ERR_AFUPLOAD,'message':'AFUpload upload fail','targetObj':elm, 'data':null});
+								iframe.attr("src","about:blank");
+								return false;
+							}
+							iframe.attr("src","about:blank");
+							
+							//permission denied, alert & redirect.
+							if(noLoginStatus(data)){;}
+							else if(typeof data == 'object' && typeof data.status != 'undefined')
+							{
+								data.targetObj = elm;
+								(data.status == 0 ? settings.onsuccess : settings.onerror)(data);
+							}
+							else
+							{
+								settings.onerror({'status':-3,'message':'upload fail','targetObj':elm, 'data':null});
+							}	
+						}
+						else if(timeoutcnt < 3000) //10 min
+						{
+							setTimeout(iLoading, 200);
+						}
+						else
+						{
+							try{
+								window['AFUploadIframe'+cnt].document.execCommand("Stop")
+							}catch(e){}
+							iframe.attr("src","about:blank");
+							settings.onerror({'status':-3,'message':'upload fail','targetObj':elm, 'data':null});
+						}
+						timeoutcnt++;
+					}
+					
+					AFUploadOnProgress = true;
+					if(event.type == 'submit'){					
+						setTimeout(iLoading, 200);
+						return true;
+					}
+					$(elm).submit();
+					setTimeout(iLoading, 200);
+					elm.reset();
+					return false;
+				}
+				
+				//XHR upload 
+				if(myFile.files.length > 0){
+
+					var file = myFile.files[0];
+					if(file.size > settings.maxSize){
+						settings.onerror({'status':AFUpload_ERR_INI_SIZE, 'message':'file size greater than '+settings.maxSize,	'targetObj':elm, 'data':null });
+						return false;
+					}
+					var myForm = new FormData();
+					var $elm =$(elm);
+					var theFileName = $(myFile).attr('name');
+					if($elm.length > 0)
+						$($elm.serializeArray()).each(function(){if(theFileName !== this.name)myForm.append(this.name, this.value);});
+					myForm.append(theFileName, file, encodeURIComponent(file.name));
+					myForm.append('AFUpload', '0');
+					myForm.append('AFUploadName', $(myFile).attr('name'));
+					myForm.append('AFUploadNum', cnt);
+					myForm.append('AFUploadMaxSize', settings.maxSize);
+					var xhrSend = function(){
+						var xhr = new XMLHttpRequest();
+						xhr.open('POST', settings.url, true);
+						xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+						xhr.onreadystatechange = function(e) {
+							switch(this.readyState)
+							{
+								case this.UNSENT:
+									break;
+								case this.OPENED:
+									break;
+								case this.HEADERS_RECEIVED:
+									break;
+								case this.LOADING:
+									break;
+								case this.DONE:
+									AFUploadOnProgress = false;
+									if (this.status == 200) {
+										try{
+											eval("var data="+this.responseText);
+										}catch(e)
+										{
+											settings.onerror({'status':AFUpload_ERR_AFUPLOAD,'message':e.toString(),'targetObj':elm, 'data':null});
+											return;
+										}
+										
+										//permission denied, alert & redirect.
+										if(noLoginStatus(data)){;}
+										else if(typeof data == 'object' && typeof data.status != 'undefined')
+										{
+											data.targetObj = elm;
+											(data.status == 0 ? settings.onsuccess : settings.onerror)(data);
+										}
+										else
+										{
+											settings.onerror({'status':-2,'message':'upload fail','targetObj':elm, 'data':null});
+										}
+										return 
+									}
+									settings.onerror({'status':-3,'message':this.status +" "+this.statusText,'targetObj':elm, 'data':null});
+									return;
+									break;
+							}
+						};
+						AFUploadOnProgress = true;
+						xhr.send(myForm);
+					} 
+					xhrSend();
+					elm.reset();
+				}
+
+				if(event.type == 'submit'){
+					event.stopPropagation();
+					event.preventDefault();
+					return false;
+				}
+			});
+	      // Tooltip plugin code here
+		});
+	};
+})( jQuery );
