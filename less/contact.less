@@ -1,0 +1,65 @@
+@import "basic.less";
+
+.contact {
+	#content {
+		.title {
+			margin-bottom: 30px;
+			letter-spacing: 2px;
+		}
+		.contact-info {
+			.address {
+				margin-bottom: 30px;
+			}
+		}
+
+		.question {
+			p {
+				margin-bottom: 30px;
+			}
+			.button {
+				font-size: 12px;
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	#footer.dark {
+		.info {
+			padding: 40px 0;
+		}
+		img {
+			margin: 0 auto;
+		}
+		.social-media {
+			float: none;
+			margin: 50px 0;
+			text-align: center;
+			ul {
+				display: inline-block;
+			}
+			a {
+				margin: 0 7.5px;
+				color: white;
+				font-size: 20px;
+				 &:hover {
+					background: white;
+					color: #222;
+					transition: .3s linear all;
+				 }
+			}
+		}
+		.copyright {
+			padding-top: 40px;
+			border-top: 1px dashed rgba(255, 255, 255, .2);
+			float: none;
+			.title {
+				margin: 0;
+				text-align: center;
+				color: @gray-text;
+				font-size: 15px;
+				font-weight: 300;
+				letter-spacing: 0;
+			}
+		}
+	}
+}

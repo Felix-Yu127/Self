@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/w.ico/favicon-16x16.png">
+  <link rel="stylesheet" href="css/fontello.css">
+  <link rel="stylesheet" href="css\normalize.css">
+  <link rel="stylesheet" href="css\main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#go-top").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+    });
+  </script>
+  <title>contact us</title>
+</head>
+
+<body class="contact">
+  <div id="header">
+    <div class="full-width container clearfix">
+
+      <div id="logo">
+        <img src="http://lorempixel.com/112/100" alt="logo">
+      </div>
+      <div id="nav">
+        <ul class="clearfix">
+          <li class="active"><a href="#">home<span class="symbol">+</span></a></li>
+          <li><a href="#">pages<span class="symbol">+</span></a></li>
+          <li><a href="#">features<span class="symbol">+</span></a></li>
+          <li><a href="#">portfolio<span class="symbol">+</span></a></li>
+          <li><a href="#">blog<span class="symbol">+</span></a></li>
+          <li><a href="#">shortcodes<span class="symbol">+</span></a></li>
+          <li class="boundary"><a href="#">shop<span class="symbol">+</span></a></li>
+          <li><a href="#"><i class="icon-basket"></i> cart(2)<span class="symbol">+</span></a></li>
+          <li><a href="#"><i class="icon-search"></i> search<span class="symbol">+</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14443.436562198307!2d121.42363227531742!3d25.174233660356922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a54fc0269ea9%3A0xefd8a1452482dedd!2z5reh5rC057SF5q-b5Z-O!5e0!3m2!1szh-TW!2stw!4v1567743092979!5m2!1szh-TW!2stw"
+      width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+    <div class="full-padding">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-4 office-info">
+            <h3 class="title">office location</h3>
+
+            <div class="contact-info">
+              <div class="address">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptates?</div>
+
+              <div class="phone">
+                <label>Telp:</label>
+                <a href="tel:+886-922-901-441">+886 922 901 441</a>
+              </div>
+              <div class="fax">
+                <label>Fax:</label>
+                <a href="tel:+886-922-901-441">+886 922 901 441</a>
+              </div>
+              <div class="email">
+                <label>Email:</label>
+                <a href="mailto:sakura914133@gmail.com">sakura914133@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8 question">
+            <h3 class="title">have you a question?</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet minima aspernatur in accusamus optio
+              quibusdam assumenda repellendus ad magni voluptatem?</p>
+
+            <form action="#" class="contact-form" method="post">
+              <div class="row">
+
+                <div class="col-6">
+                  <label for="name">name *</label>
+                  <input type="text" name="name" id="name" required>
+                </div>
+                <div class="col-6">
+                  <label for="email">email *</label>
+                  <input type="text" name="email" id="email" required>
+                </div>
+                <div class="col-6">
+                  <label for="phone">phone</label>
+                  <input type="text" name="phone" id="phone">
+                </div>
+                <div class="col-6">
+                  <label for="subject">subject</label>
+                  <input type="text" name="subject" id="subject">
+                </div>
+                <div class="col-12">
+                  <label for="comments">comments</label>
+                  <textarea name="comments" id="comments"></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="button black">send message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <div id="footer" class="dark">
+
+    <div class="info">
+      <div class="container full-width">
+
+        <img src="http://lorempixel.com/112/100" alt="massive">
+
+        <div class="social-media">
+          <ul class="clearfix">
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+            <li><a href="#"><i class="icon-gplus"></i></a></li>
+            <li><a href="#"><i class="icon-behance"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="copyright">
+          <div class="title">&copy; copyright 2014 "massive". all right reserved</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#header" id="go-top"><i class="icon-angle-up"></i></a>
+
+</body>
+
+</html>
