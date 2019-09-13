@@ -10,16 +10,7 @@
   <link rel="stylesheet" href="css\normalize.css">
   <link rel="stylesheet" href="css\main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#go-top").click(function (e) {
-        e.preventDefault();
-        var target = $(e.currentTarget).attr("href");
-        var offset = $(target).offset();
-        $("html, body").animate({ scrollTop: offset.top });
-      });
-    });
-  </script>
+
   <title>Decor</title>
 </head>
 
@@ -28,7 +19,7 @@
     <div class="container clearfix">
 
       <div id="logo">
-        <img src="http://lorempixel.com/112/100" alt="logo">
+        <img src="http://lorempixel.com/112/100" alt="logo" class="img112-100">
       </div>
       <div id="nav">
         <ul class="clearfix">
@@ -55,23 +46,36 @@
     <div class="categories">
       <div class="container">
         <div class="row clearfix">
-          <div class="col-6 category"><a href="#">
-              <img src="http://lorempixel.com/575/265" alt="category" />
+          <div class="col-6 category img575-265">
+            <a href="#">
+              <img src="http://lorempixel.com/575/265" alt="category">
               <span class="title dark">outdoor<br>lighting</span>
-            </a></div>
-          <div class="col-6 category"><a href="#">
-              <img src="http://lorempixel.com/575/265" alt="category" />
+            </a>
+          </div>
+          <div class="col-6 category img575-265">
+            <a href="#">
+              <img src="http://lorempixel.com/575/265" alt="category">
               <span class="title light">wooden<br>flooring</span>
-            </a></div>
-          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+            </a>
+          </div>
+          <div class="col-4 category img379-265">
+            <a href="#">
+              <img src="http://lorempixel.com/379/265" alt="category">
               <span class="title dark">living<br>area</span>
-            </a></div>
-          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+            </a>
+          </div>
+          <div class="col-4 category img379-265">
+            <a href="#">
+              <img src="http://lorempixel.com/379/265" alt="category">
               <span class="title light">bathroom<br>fittings</span>
-            </a></div>
-          <div class="col-4 category"><a href="#"><img src="http://lorempixel.com/379/265" alt="category" />
+            </a>
+          </div>
+          <div class="col-4 category img379-265">
+            <a href="#">
+              <img src="http://lorempixel.com/379/265" alt="category">
               <span class="title dark">tools&amp;<br>equipment</span>
-            </a></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -87,7 +91,7 @@
         <div class="products">
           <ul class="clearfix row">
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -101,7 +105,7 @@
               </div>
             </li>
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -115,7 +119,7 @@
               </div>
             </li>
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -129,7 +133,7 @@
               </div>
             </li>
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -143,7 +147,7 @@
               </div>
             </li>
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -157,7 +161,7 @@
               </div>
             </li>
             <li class="col-4 product">
-              <div class="thumbnail">
+              <div class="thumbnail img370-277">
                 <img src="http://lorempixel.com/370/277" alt="product">
                 <div class="cover">
                   <a href="#"><i class="icon-search-1"></i></a>
@@ -196,7 +200,7 @@
 
         <div class="row">
 
-          <div class="col-6">
+          <div class="col-6 img525-453">
             <img src="http://lorempixel.com/525/453" alt="product">
           </div>
           <div class="col-6 info">
@@ -287,7 +291,7 @@
   <div id="footer">
     <div class="container clearfix">
       <div class="logo">
-        <img src="http://lorempixel.com/57/52" alt="logo">
+        <img src="http://lorempixel.com/57/52" alt="logo" class="img57-52">
       </div>
 
       <div class="copyright">
@@ -310,6 +314,17 @@
 
   <a href="#header" id="go-top"><i class="icon-angle-up"></i></a>
 
+  
+  <script>
+    $(document).ready(function () {
+      $("#go-top").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+    });
+  </script>
 </body>
 
 </html>

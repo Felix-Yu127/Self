@@ -10,16 +10,6 @@
   <link rel="stylesheet" href="css\normalize.css">
   <link rel="stylesheet" href="css\main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#go-top").click(function (e) {
-        e.preventDefault();
-        var target = $(e.currentTarget).attr("href");
-        var offset = $(target).offset();
-        $("html, body").animate({ scrollTop: offset.top });
-      });
-    });
-  </script>
   <title>Career</title>
 </head>
 
@@ -28,7 +18,7 @@
     <div class="full-width container clearfix">
 
       <div id="logo">
-        <img src="http://lorempixel.com/112/100" alt="logo">
+        <img src="http://lorempixel.com/112/100" alt="logo" class="img112-100">
       </div>
       <div id="nav">
         <ul class="clearfix">
@@ -183,7 +173,7 @@
           </div>
         </form>
       </div>
-      
+
     </div>
   </div>
 
@@ -195,7 +185,7 @@
         <div class="row">
 
           <div class="col-3">
-            <img src="http://lorempixel.com/112/100" alt="massive">
+            <img src="http://lorempixel.com/112/100" alt="massive" class="img112-100">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta sapiente dolore esse ratione quae
               repudiandae!</p>
           </div>
@@ -224,14 +214,14 @@
             <h4 class="title">recent work</h4>
             <div class="thumbnails">
               <ul>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
               </ul>
             </div>
           </div>
@@ -267,6 +257,17 @@
 
   <a href="#header" id="go-top"><i class="icon-angle-up"></i></a>
 
+
+  <script>
+    $(document).ready(function () {
+      $("#go-top").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -10,16 +10,6 @@
   <link rel="stylesheet" href="css\normalize.css">
   <link rel="stylesheet" href="css\main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#go-top").click(function (e) {
-        e.preventDefault();
-        var target = $(e.currentTarget).attr("href");
-        var offset = $(target).offset();
-        $("html, body").animate({ scrollTop: offset.top });
-      });
-    });
-  </script>
   <title>Services 3</title>
 </head>
 
@@ -28,7 +18,7 @@
     <div class="full-width container clearfix">
 
       <div id="logo">
-        <img src="http://lorempixel.com/112/100" alt="logo">
+        <img src="http://lorempixel.com/112/100" alt="logo" class="img112-100">
       </div>
       <div id="nav">
         <ul class="clearfix">
@@ -148,7 +138,7 @@
             </div>
           </div>
           <div class="col-4">
-            <img src="http://lorempixel.com/330/497" alt="iPhone">
+            <img src="http://lorempixel.com/330/497" alt="iPhone" class="img330-497">
           </div>
           <div class="col-4">
             <div class="feature-item">
@@ -187,7 +177,7 @@
 
         <div class="row">
           <div class="col-5">
-            <img src="http://lorempixel.com/415/330" alt="image">
+            <img src="http://lorempixel.com/415/330" alt="image" class="img415-330">
           </div>
           <div class="col-7">
 
@@ -240,7 +230,7 @@
                 </div>
                 <div class="duration">per month</div>
               </div>
-  
+
               <div class="features">
                 <ul>
                   <li>24/7 Tech Support.</li>
@@ -249,10 +239,10 @@
                   <li>Lorem, ipsum dolor.</li>
                 </ul>
               </div>
-  
+
               <a href="#" class="button bordered light-border full-width">purchase now</a>
             </div>
-          
+
           </div>
 
           <div class="col-4 package recommended">
@@ -330,7 +320,7 @@
         <div class="row">
 
           <div class="col-3">
-            <img src="http://lorempixel.com/112/100" alt="massive">
+            <img src="http://lorempixel.com/112/100" alt="massive" class="img112-100">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta sapiente dolore esse ratione quae
               repudiandae!</p>
           </div>
@@ -359,14 +349,14 @@
             <h4 class="title">recent work</h4>
             <div class="thumbnails">
               <ul>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
-                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
+                <li><a href="#"><img src="http://lorempixel.com/55/55" alt="work" class="img55-55"></a></li>
               </ul>
             </div>
           </div>
@@ -402,6 +392,19 @@
 
   <a href="#header" id="go-top"><i class="icon-angle-up"></i></a>
 
+
+
+
+  <script>
+    $(document).ready(function () {
+      $("#go-top").click(function (e) {
+        e.preventDefault();
+        var target = $(e.currentTarget).attr("href");
+        var offset = $(target).offset();
+        $("html, body").animate({ scrollTop: offset.top });
+      });
+    });
+  </script>
 </body>
 
 </html>
