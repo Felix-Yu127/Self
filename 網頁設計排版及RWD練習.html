@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>網頁設計排版練習</title>
+  <style>
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    #sky {
+      background-image: url(/images/image/minecraft-1106252_960_720.jpg);
+      background-size: cover;
+      -webkit-background-size: cover;
+      background-position: 50% 50%;
+      height: 100vh;
+    }
+
+    #sky>div {
+      position: fixed;
+    }
+
+    .moon {
+      left: 6%;
+      top: 7%;
+      width: 150px;
+      opacity: .7;
+    }
+
+    .clouds {
+      top: 10%;
+      left: 7%;
+      opacity: .8;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 200px;
+    }
+
+    .cloud:nth-child(1) {
+      top: 0;
+      left: 120px;
+    }
+
+    .cloud:nth-child(2) {
+      top: 60px;
+      left: 0;
+    }
+
+    .logo {
+      top: 0;
+      left: 28%;
+      width: 1050px;
+      opacity: .9;
+    }
+
+    #bottom {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .mans {
+      position: absolute;
+      left: 35%;
+      bottom: 30px;
+      width: 500px;
+    }
+
+    .man {
+      position: absolute;
+      left: 2%;
+      bottom: 0;
+      width: 350px;
+      transform: rotateY(180deg)
+    }
+
+    .chicken {
+      position: absolute;
+      left: 71%;
+      bottom: 20px;
+      width: 120px;
+    }
+
+    .spider {
+      position: absolute;
+      left: 80%;
+      bottom: 150px;
+      width: 150px;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1440px) {
+
+      .moon,
+      .clouds {
+        left: 2%;
+      }
+
+      .logo {
+        left: 13%;
+        transform: scale(.7);
+      }
+
+      .man {
+        transform: rotateY(180deg);
+        width: 300px;
+      }
+
+      .mans {
+        bottom: 30px;
+        width: 420px;
+      }
+
+      .chicken,
+      .spider {
+        transform: scale(.8);
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+      .moon,
+      .clouds {
+        transform: scale(.8);
+      }
+
+      .logo {
+        transform: scale(0.6);
+        left: 0;
+        top: 15%;
+      }
+
+      .mans,
+      .chicken,
+      .spider {
+        transform: scale(.8);
+      }
+
+      .mans {
+        left: 30%;
+      }
+
+      .man {
+        transform: rotateY(180deg);
+        width: 250px;
+      }
+
+      .chicken {
+        left: 77%;
+      }
+    }
+
+    @media (max-width: 829px) {
+      .logo {
+        left: -15%;
+        top: 20%;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 425px) {
+
+      .moon,
+      .clouds {
+        transform: scale(.5);
+      }
+
+      .moon {
+        top: -5%;
+        left: -10%;
+      }
+
+      .clouds {
+        top: 2%;
+      }
+
+      .logo {
+        left: -90px;
+        top: 20%;
+        width: 150%;
+      }
+
+      .mans {
+        width: 250px;
+        bottom: 110px;
+        left: 15%;
+      }
+
+      .man {
+        transform: rotateY(180deg);
+        width: 170px;
+      }
+
+      .chicken {
+        width: 60px;
+        left: 58%;
+        bottom: 5px;
+      }
+
+      .spider {
+        width: 115px;
+        left: 67%;
+        bottom: 54px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="sky">
+
+    <div class="moon">
+      <img src="images\image\moon_PNG35.png" alt="moon">
+    </div>
+
+    <div class="clouds">
+      <div class="cloud">
+        <img src="images\image\cloud_PNG16.png" alt="cloud">
+      </div>
+      <div class="cloud">
+        <img src="images\image\cloud_PNG16.png" alt="cloud">
+      </div>
+    </div>
+
+    <div class="logo">
+      <img src="/images/image/minecraft_PNG9.png" alt="logo">
+    </div>
+  </div>
+
+  <div id="bottom">
+
+    <div class="mans">
+      <img src="/images/image/minecraft_PNG40.png" alt="mans">
+    </div>
+    <div class="man">
+      <img src="/images/image/minecraft_PNG47.png" alt="man">
+    </div>
+    <div class="chicken">
+      <img src="/images/image/minecraft_PNG75.png" alt="chicken">
+    </div>
+    <div class="spider">
+      <img src="/images/image/minecraft_PNG105.png" alt="spider">
+    </div>
+
+  </div>
+</body>
+
+</html>
