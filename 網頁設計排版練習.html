@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>網頁設計排版練習</title>
+  <style>
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(/images/image/minecraft-1106252_960_720.jpg);
+      background-size: cover;
+    }
+
+    div {
+      position: fixed;
+    }
+
+    .moon {
+      left: 6%;
+      top: 7%;
+      width: 150px;
+      opacity: .7;
+    }
+
+    .clouds {
+      top: 10%;
+      left: 7%;
+      opacity: .8;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 200px;
+    }
+
+    .cloud:nth-child(1) {
+      top: 0;
+      left: 120px;
+    }
+
+    .cloud:nth-child(2) {
+      top: 60px;
+      left: 0;
+    }
+
+    .logo {
+      top: 0;
+      left: 28%;
+      width: 1050px;
+      opacity: .9;
+    }
+
+    .mans {
+      left: 35%;
+      bottom: 5%;
+      width: 500px;
+    }
+
+    .man {
+      bottom: 0;
+      left: 5%;
+      width: 350px;
+      transform: rotateY(180deg)
+    }
+
+    .chicken {
+      right: 20%;
+      bottom: 1.5%;
+      width: 120px;
+    }
+
+    .spider {
+      right: 12%;
+      bottom: 20%;
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="moon">
+    <img src="images\image\moon_PNG35.png" alt="moon">
+  </div>
+
+  <div class="clouds">
+    <div class="cloud">
+      <img src="images\image\cloud_PNG16.png" alt="cloud">
+    </div>
+    <div class="cloud">
+      <img src="images\image\cloud_PNG16.png" alt="cloud">
+    </div>
+  </div>
+
+  <div class="logo">
+    <img src="/images/image/minecraft_PNG9.png" alt="logo">
+  </div>
+
+  <div class="mans">
+    <img src="/images/image/minecraft_PNG40.png" alt="mans">
+
+    <div class="man">
+      <img src="/images/image/minecraft_PNG47.png" alt="man">
+    </div>
+
+    <div class="chicken">
+      <img src="/images/image/minecraft_PNG75.png" alt="chicken">
+    </div>
+
+    <div class="spider">
+      <img src="/images/image/minecraft_PNG105.png" alt="spider">
+    </div>
+  </div>
+
+</body>
+
+</html>
