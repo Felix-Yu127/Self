@@ -17,12 +17,25 @@
       margin: 0;
     }
 
+
     #sky {
       background-image: url(/images/image/minecraft-1106252_960_720.jpg);
       background-size: cover;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       background-position: 50% 50%;
+      height: 100vh;
+    }
+
+    @media (min-height: -webkit-fill-available) {
+      #sky {
+        background-image: url(/images/image/minecraft-1106252_960_720.jpg);
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-position: 50% 50%;
+        height: 100vh;
+      }
     }
 
     #sky>div {
@@ -99,119 +112,117 @@
       width: 150px;
     }
 
-    @media (min-height: -webkit-fill-available) {
-      @media (min-width: 1025px) and (max-width: 1440px) {
+    @media (min-width: 1025px) and (max-width: 1440px) {
 
-        .moon,
-        .clouds {
-          left: 2%;
-        }
-
-        .logo {
-          left: 13%;
-          transform: scale(.7);
-        }
-
-        .man {
-          transform: rotateY(180deg);
-          width: 300px;
-        }
-
-        .mans {
-          bottom: 30px;
-          width: 420px;
-        }
-
-        .chicken,
-        .spider {
-          transform: scale(.8);
-        }
+      .moon,
+      .clouds {
+        left: 2%;
       }
 
-      @media (max-width: 1024px) {
-
-        .moon,
-        .clouds {
-          transform: scale(.8);
-        }
-
-        .logo {
-          transform: scale(0.6);
-          left: 0;
-          top: 15%;
-        }
-
-        .mans,
-        .chicken,
-        .spider {
-          transform: scale(.8);
-        }
-
-        .mans {
-          left: 30%;
-        }
-
-        .man {
-          transform: rotateY(180deg);
-          width: 250px;
-        }
-
-        .chicken {
-          left: 77%;
-        }
+      .logo {
+        left: 13%;
+        transform: scale(.7);
       }
 
-      @media (max-width: 829px) {
-        .logo {
-          left: -15%;
-          top: 20%;
-        }
+      .man {
+        transform: rotateY(180deg);
+        width: 300px;
       }
 
-      @media (min-width: 320px) and (max-width: 425px) {
+      .mans {
+        bottom: 30px;
+        width: 420px;
+      }
 
-        .moon,
-        .clouds {
-          transform: scale(.5);
-        }
+      .chicken,
+      .spider {
+        transform: scale(.8);
+      }
+    }
 
-        .moon {
-          top: -5%;
-          left: -10%;
-        }
+    @media (max-width: 1024px) {
 
-        .clouds {
-          top: 2%;
-        }
+      .moon,
+      .clouds {
+        transform: scale(.8);
+      }
 
-        .logo {
-          left: -90px;
-          top: 20%;
-          width: 150%;
-        }
+      .logo {
+        transform: scale(0.6);
+        left: 0;
+        top: 15%;
+      }
 
-        .mans {
-          width: 250px;
-          bottom: 110px;
-          left: 15%;
-        }
+      .mans,
+      .chicken,
+      .spider {
+        transform: scale(.8);
+      }
 
-        .man {
-          transform: rotateY(180deg);
-          width: 170px;
-        }
+      .mans {
+        left: 30%;
+      }
 
-        .chicken {
-          width: 60px;
-          left: 58%;
-          bottom: 5px;
-        }
+      .man {
+        transform: rotateY(180deg);
+        width: 250px;
+      }
 
-        .spider {
-          width: 115px;
-          left: 67%;
-          bottom: 54px;
-        }
+      .chicken {
+        left: 77%;
+      }
+    }
+
+    @media (max-width: 829px) {
+      .logo {
+        left: -15%;
+        top: 20%;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 425px) {
+
+      .moon,
+      .clouds {
+        transform: scale(.5);
+      }
+
+      .moon {
+        top: -5%;
+        left: -10%;
+      }
+
+      .clouds {
+        top: 2%;
+      }
+
+      .logo {
+        left: -90px;
+        top: 20%;
+        width: 150%;
+      }
+
+      .mans {
+        width: 250px;
+        bottom: 110px;
+        left: 15%;
+      }
+
+      .man {
+        transform: rotateY(180deg);
+        width: 170px;
+      }
+
+      .chicken {
+        width: 60px;
+        left: 58%;
+        bottom: 5px;
+      }
+
+      .spider {
+        width: 115px;
+        left: 67%;
+        bottom: 54px;
       }
     }
   </style>
